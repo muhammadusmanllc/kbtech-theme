@@ -1,0 +1,1132 @@
+/*
+Theme Name: Neon Digital (KBTech)
+*/
+
+:root {
+    /* --- NEW COLOR PALETTE --- */
+    --color-primary: #33658A;  /* The Blue */
+    --color-accent: #D3FE3E;   /* The Green */
+    --color-text: #000000;     /* Black */
+    --color-text-light: #6b7280;
+    
+    --color-bg-body: #ffffff;
+    --color-bg-light: #f9fafb;
+    --color-bg-dark: #0f172a;
+    
+    /* Keep gradients for Hero background only */
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --gradient-dark: linear-gradient(180deg, #1e1b4b 0%, #0f172a 100%);
+    
+    /* Fonts */
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --container-padding: 24px;
+    --container-max-width: 1280px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+}
+
+/* Reset & Base */
+* { box-sizing: border-box; }
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg-body);
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-top: 0;
+    color: #000000;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; padding: 0; margin: 0; }
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.section-padding { padding: 80px 0; }
+.text-center { text-align: center; }
+
+/* --- UPDATED BUTTONS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* The Green Button */
+.btn-primary {
+    background: var(--color-accent); /* #D3FE3E */
+    color: #000000; /* Black Text */
+}
+
+/* Hover: Turns Blue with White Text */
+.btn-primary:hover {
+    background: var(--color-primary); /* #33658A */
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-glass {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-glass:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.btn-block { width: 100%; }
+.btn-sm { padding: 10px 24px; font-size: 0.9rem; }
+
+/* --- UPDATED HEADER --- */
+.site-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    padding: 20px 0;
+    /* White Background as requested */
+    background-color: #ffffff; 
+    color: #000000;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.05); /* Adds subtle separation */
+}
+
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.header-right { display: flex; align-items: center; gap: 30px; }
+
+/* Logo Fix Integrated Here */
+.site-branding .logo img {
+    width: 150px; 
+    height: auto; 
+    display: block;
+    max-width: 100%;
+}
+
+.site-navigation ul { display: flex; gap: 30px; }
+
+/* Navigation Links */
+.site-navigation a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000000; /* Black */
+}
+
+/* Nav Hover: Turns Blue */
+.site-navigation a:hover { 
+    color: var(--color-primary); 
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle .bar { 
+    background: #000000 !important; /* Force black bars on white header */ 
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: var(--gradient-dark);
+    color: white;
+    padding: 180px 0 140px; /* Top padding clears the header */
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-bg-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: 1;
+}
+.shape-1 { width: 300px; height: 300px; background: #2563eb; top: -50px; left: -50px; }
+.shape-2 { width: 400px; height: 400px; background: #7c3aed; bottom: 0; right: -100px; }
+.shape-3 { width: 200px; height: 200px; background: var(--color-accent); top: 20%; right: 20%; opacity: 0.2; }
+
+.hero-container { position: relative; z-index: 10; }
+.hero-content { max-width: 800px; margin: 0 auto; }
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+.text-gradient {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+}
+
+.hero-buttons { display: flex; justify-content: center; gap: 16px; }
+
+.hero-fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--color-bg-body), transparent);
+    z-index: 5;
+}
+
+/* Services Section */
+.section-subtitle {
+    max-width: 600px;
+    margin: 16px auto 40px;
+    color: var(--color-text-light);
+}
+
+.service-tabs {
+    display: inline-flex;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 999px;
+    margin-bottom: 60px;
+}
+.tab-btn {
+    border: none;
+    background: none;
+    padding: 8px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.tab-btn.active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background: white;
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: #bfdbfe;
+}
+
+.service-icon-box {
+    width: 48px;
+    height: 48px;
+    background: #eff6ff;
+    color: var(--color-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.service-card p { font-size: 0.9rem; color: var(--color-text-light); }
+
+/* Projects Section */
+.bg-light { background-color: var(--color-bg-light); }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.project-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+}
+.project-card:hover { box-shadow: var(--shadow-lg); }
+
+.project-image-placeholder {
+    height: 240px;
+    background: #dbeafe;
+    position: relative;
+}
+.project-image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; height: 80px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-content { padding: 24px; }
+.project-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+}
+.project-content h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.project-content p { font-size: 0.9rem; color: var(--color-text-light); }
+
+/* Contact Section */
+.contact-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+.contact-heading { font-size: 2.5rem; margin-bottom: 24px; line-height: 1.2; }
+.contact-desc { color: var(--color-text-light); margin-bottom: 40px; max-width: 480px; }
+
+.method-item { display: flex; gap: 16px; margin-bottom: 24px; }
+.icon-circle {
+    width: 40px; height: 40px;
+    background: #eff6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+.method-item strong { display: block; font-size: 0.9rem; color: #111827; }
+.method-item p { margin: 0; font-size: 0.9rem; color: #6b7280; }
+
+.contact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #f3f4f6;
+}
+.clean-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.clean-form .form-group { margin-bottom: 20px; }
+.clean-form label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #374151; }
+.clean-form input, .clean-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+.clean-form input:focus, .clean-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(51, 101, 138, 0.1);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--color-bg-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 80px 0 20px;
+    font-size: 0.9rem;
+}
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+.footer-logo { font-size: 1.5rem; color: white; margin-bottom: 16px; }
+.footer-nav-col h4 { color: white; font-size: 1rem; margin-bottom: 20px; }
+.footer-nav-col ul li { margin-bottom: 12px; }
+.footer-nav-col a:hover { color: white; }
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.52);
+    padding-top: 32px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero-title { font-size: 2.5rem; }
+    .contact-grid-layout, .footer-top { grid-template-columns: 1fr; }
+    .site-navigation { display: none; } /* Mobile menu needed */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: none; border: none; padding: 0;
+    }
+    .menu-toggle .bar { width: 24px; height: 2px; background: #000000; }
+}
+/* =========================================
+   DROPDOWN MENU STYLING (Multi-Level)
+   ========================================= */
+
+/* 1. Parent Relative Positioning */
+.site-navigation ul li {
+    position: relative; /* Essential for positioning the dropdown relative to the button */
+}
+
+/* 2. The Dropdown Box (Hidden by default) */
+.site-navigation ul ul {
+    position: absolute;
+    top: 100%; /* Push it below the header */
+    left: 0;
+    width: 260px; /* Wider to fit text */
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Stronger shadow for depth */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Slide up effect */
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 10px 0;
+    display: block; /* Flex override */
+    z-index: 999;
+}
+
+/* 3. Show Dropdown on Hover */
+.site-navigation li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 4. Dropdown Link Styling */
+.site-navigation ul ul li {
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.site-navigation ul ul li:last-child {
+    border-bottom: none;
+}
+
+.site-navigation ul ul a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: 0.2s;
+}
+
+/* 5. Dropdown Hover Effects */
+.site-navigation ul ul a:hover {
+    background: #f3f4f6; /* Light gray background */
+    color: var(--color-primary); /* Blue Text */
+    padding-left: 25px; /* Slight movement to right */
+}
+
+/* =========================================
+   LEVEL 3 MENU (Academic Writing)
+   ========================================= */
+
+/* Position the 3rd level menu to the RIGHT of the 2nd level */
+.site-navigation ul ul ul {
+    top: 0;
+    left: 100%; /* Move it completely to the right */
+    margin-left: 10px; /* Little gap */
+}
+
+/* Arrow indicator for parents */
+.menu-item-has-children > a::after {
+    content: ' ▾';
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+.site-navigation ul ul .menu-item-has-children > a::after {
+    content: ''; /* Remove down arrow in side menu */
+}
+
+/* Mobile Fix: Hide dropdowns on tiny screens to prevent breaking layout */
+@media (max-width: 900px) {
+    .site-navigation { display: none; } 
+}
+/* =========================================
+   FOOTER LOGO STYLING
+   ========================================= */
+
+.footer-logo-img {
+    width: 170px; /* Usually looks good slightly larger than header logo */
+    height: auto;
+    display: block;
+    margin-bottom: 24px; /* Space between logo and the paragraph text */
+}
+
+/* Optional: Ensure it has breathing room on mobile */
+@media (max-width: 900px) {
+    .footer-logo-img {
+        margin-bottom: 20px;
+        width: 150px;
+    }
+}
+/* =========================================
+   MOBILE SERVICE TABS ADJUSTMENT
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Reset the container to allow wrapping */
+    .service-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: transparent !important; /* Remove the main grey pill background */
+        padding: 0;
+        gap: 10px; /* Space between the wrapped buttons */
+    }
+
+    /* 2. Style individual buttons as their own pills */
+    .service-tabs .tab-btn {
+        background: #f1f5f9; /* Each button gets the grey bg */
+        border-radius: 999px;
+        padding: 10px 20px;
+        flex: 0 1 auto; /* Allow them to be natural width */
+        margin: 0;
+        font-size: 0.85rem;
+    }
+
+    /* 3. Ensure the Active state still overrides the grey */
+    .service-tabs .tab-btn.active {
+        background: var(--color-primary); /* Blue */
+        color: white;
+        box-shadow: var(--shadow-md);
+    }
+}
+/* =========================================
+   OUR CLIENTS SECTION (NEW LAYOUT)
+   ========================================= */
+
+.our-clients-section {
+    background-color: #ffffff;
+    text-align: center; /* Centers the heading */
+    padding-bottom: 80px; /* Space after the section */
+}
+
+/* Heading Style */
+.clients-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 60px; /* Space between Title and Logos */
+    letter-spacing: -0.5px;
+}
+
+/* The Flex Container */
+.clients-flex-wrapper {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    flex-wrap: wrap; /* Allows them to wrap to the next line */
+    gap: 60px; /* Space between logos */
+    max-width: 1000px; /* Constrains width to force the 3-top / 2-bottom layout */
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Individual Link Styling */
+.client-logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* --- THE HOVER EFFECT --- */
+.client-logo-link img {
+    height: 35px; /* Clean, uniform height for text-based logos */
+    width: auto;
+    display: block;
+    
+    /* DEFAULT STATE: Light Grey */
+    filter: grayscale(100%) opacity(0.3); 
+    
+    transition: all 0.4s ease;
+}
+
+.client-logo-link:hover img {
+    /* HOVER STATE: Original Black (Full Visibility) */
+    filter: grayscale(0%) opacity(1);
+}
+
+.client-logo-link:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .clients-heading {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .clients-flex-wrapper {
+        gap: 40px; /* Smaller gaps on mobile */
+    }
+    
+    .client-logo-link img {
+        height: 30px; /* Slightly smaller logos on mobile */
+    }
+    
+    /* Force 2 logos per row on mobile for better balance */
+    .client-logo-link {
+        flex: 0 1 40%; 
+        display: flex;
+        justify-content: center;
+    }
+}
+/* =========================================
+   STICKY SCROLL WCU SECTION
+   ========================================= */
+
+.sticky-wcu-section {
+    background-color: #ffffff;
+    overflow: visible; /* Required for sticky to work */
+}
+
+.sticky-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% Text, 50% Image */
+    gap: 80px;
+    align-items: start; /* Crucial for sticky */
+}
+
+/* --- LEFT COLUMN (TEXT) --- */
+.scroll-content-item {
+    padding: 40px 30px;
+    margin-bottom: 20px;
+    border-left: 3px solid #e2e8f0; /* The grey line */
+    transition: all 0.3s ease;
+    opacity: 0.4; /* Faded out by default */
+}
+
+.scroll-content-item.active-text {
+    border-left-color: var(--color-primary); /* Blue line when active */
+    opacity: 1; /* Full visibility */
+    padding-left: 40px; /* Slight movement */
+}
+
+.scroll-content-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.scroll-content-item p {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- RIGHT COLUMN (IMAGES) --- */
+.sticky-image-col {
+    position: relative;
+    height: 100%; /* Fill the grid height */
+}
+
+.image-sticky-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px; /* How far from top to stick */
+    height: 400px; /* Fixed height for image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image stacking */
+.wcu-sticky-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: contain;
+}
+
+/* Active Image State */
+.wcu-sticky-img.active {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    z-index: 2;
+}
+
+/* Optional Decoration Blob */
+.blob-bg {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(51,101,138,0.1) 0%, rgba(255,255,255,0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .sticky-layout {
+        grid-template-columns: 1fr; /* Stack vertically */
+    }
+    
+    .sticky-image-col {
+        order: -1; /* Move image to top on mobile */
+        height: 300px;
+        margin-bottom: 40px;
+    }
+    
+    .image-sticky-wrapper {
+        position: relative; /* Disable sticky on mobile */
+        top: 0;
+        height: 300px;
+    }
+    
+    .scroll-content-item {
+        opacity: 1; /* Always show text on mobile */
+        border-left: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+}
+/* =========================================
+   WHY CHOOSE US (VIDEO BACKGROUND VERSION)
+   ========================================= */
+
+.wcu-video-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; /* Ensure height even if content is small */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 100px 0;
+}
+
+/* --- 1. VIDEO BACKGROUND LOGIC --- */
+.video-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Lowest layer */
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers area without stretching */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark Gradient Overlay - Makes text pop */
+    background: linear-gradient(90deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.7) 100%);
+    z-index: 2;
+}
+
+/* --- 2. LAYOUT & CONTENT --- */
+.wcu-video-content {
+    position: relative;
+    z-index: 10; /* Sits on top of video */
+}
+
+.wcu-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split */
+    gap: 80px;
+    align-items: center;
+}
+
+/* Left Column Styling */
+.accent-subtitle {
+    color: var(--color-accent); /* Your Green */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.wcu-main-heading {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    color: white;
+}
+.wcu-main-heading .highlight {
+    color: var(--color-accent);
+}
+
+.wcu-feature-list li {
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom Bullet Points */
+.wcu-feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary); /* Your Blue */
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+/* --- 3. THE STATS GRID (RIGHT COL) --- */
+.stats-grid-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px); /* Blurs the video behind the card */
+    padding: 40px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Hover Effect */
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px); /* Lift up */
+    border-color: var(--color-accent); /* Green Border on hover */
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .wcu-split-layout {
+        grid-template-columns: 1fr; /* Stack Text on top of Grid */
+        gap: 50px;
+    }
+    
+    .wcu-main-heading {
+        font-size: 2.5rem;
+    }
+
+    /* On mobile, stack video overlay heavier so text is readable */
+    .video-overlay {
+        background: rgba(15,23,42,0.9); 
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-grid-box {
+        grid-template-columns: 1fr; /* 1 Box per row on tiny screens */
+    }
+}
+/* =========================================
+   REVIEWS SECTION
+   ========================================= */
+
+:root {
+    --color-review-red: #ef4444; /* The specific red from your image */
+}
+
+.reviews-section {
+    overflow: hidden; /* Prevents horizontal scrollbar on body */
+    background: #ffffff;
+}
+
+.reviews-layout {
+    display: grid;
+    grid-template-columns: 40% 55%; /* Text takes 40%, Slider takes rest */
+    gap: 5%;
+    align-items: center;
+}
+
+/* --- LEFT TEXT COLUMN --- */
+.review-label-wrapper {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.review-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.wavy-underline {
+    display: block;
+    margin-top: -5px;
+}
+
+.reviews-text-col .section-title {
+    text-align: left; /* Override center alignment */
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.reviews-text-col .section-desc {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* --- RIGHT SLIDER COLUMN --- */
+.reviews-slider-col {
+    position: relative;
+    width: 100%;
+    /* We extend the width slightly to the right to show cut-off cards */
+    margin-right: -200px; 
+    padding-right: 10px;
+}
+
+/* Navigation Arrows (Top Right) */
+.slider-nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-right: 20px; /* Align with container */
+}
+
+.nav-arrow {
+    background: transparent;
+    border: 2px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-arrow:hover {
+    background: #000;
+    color: white;
+}
+
+/* The Track (Native CSS Slider) */
+.reviews-track {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px 40px 10px; /* Bottom padding for shadow space */
+    
+    /* Hide Scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-snap-type: x mandatory; /* Makes cards snap into place */
+}
+
+.reviews-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Review Card Styling */
+.review-card {
+    min-width: 350px;
+    max-width: 350px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* Soft shadow */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: start; /* Snap logic */
+    border: 1px solid #f3f4f6;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--color-review-red);
+    font-family: serif;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.review-body {
+    color: #374151;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.review-author {
+    color: var(--color-review-red);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    border-left: 3px solid #000; /* Optional detail line */
+    padding-left: 15px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .reviews-layout {
+        grid-template-columns: 1fr; /* Stack vertically on tablet/mobile */
+        gap: 50px;
+    }
+    
+    .reviews-slider-col {
+        margin-right: 0;
+        padding-right: 0;
+    }
+    
+    .review-card {
+        min-width: 300px; /* Slightly smaller cards */
+    }
+}
+/* =========================================
+   MOBILE PHONE FIX (UPDATED & ROBUST)
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Force Vertical Stacking */
+    .reviews-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* 2. Center the Text Column perfectly */
+    .reviews-text-col {
+        text-align: center;
+        width: 100%;
+        padding: 0 20px; /* Adds breathing room on left/right */
+    }
+
+    /* 3. CENTER the Label and Wavy Line using Flexbox */
+    .review-label-wrapper {
+        display: flex;
+        flex-direction: column; /* Stack text on top of line */
+        align-items: center;    /* Center them horizontally */
+        justify-content: center;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .wavy-underline {
+        margin-top: 5px;
+        display: block;
+    }
+
+    .reviews-text-col .section-title {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .section-desc {
+        font-size: 0.95rem; /* Make paragraph slightly smaller for mobile */
+    }
+
+    /* 4. Center Arrows */
+    .slider-nav-buttons {
+        justify-content: center;
+        margin-bottom: 20px;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    /* 5. Fix the Slider Track */
+    .reviews-slider-col {
+        width: 100%; /* Full width */
+        margin-right: 0;
+        padding-right: 0;
+    }
+    
+    .reviews-track {
+        padding-left: 20px; /* Align first card with the text padding */
+        padding-right: 20px;
+        gap: 15px; /* Smaller gap between cards */
+    }
+
+    /* 6. Fix the Cards */
+    .review-card {
+        min-width: 85vw; /* 85% of screen width */
+        max-width: 85vw;
+        padding: 25px 20px;
+    }
+}
