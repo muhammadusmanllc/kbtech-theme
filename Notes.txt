@@ -1,0 +1,8 @@
+// For Contact Page \\
+
+Final Note on Form Functionality
+Since this is a custom-coded site, the HTML <form> above won't send emails yet. You have two options:
+Manual PHP: Add a PHP mailer function in your functions.php.
+Plugin (Recommended): Use a plugin like Contact Form 7. 
+You can copy the HTML into the CF7 form editor and just replace the inputs with CF7 shortcodes
+(e.g., [text* your-name]). This will handle the email delivery for you while keeping the custom design.
