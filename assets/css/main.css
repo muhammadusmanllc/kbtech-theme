@@ -1675,3 +1675,436 @@ img { max-width: 100%; display: block; }
         margin-bottom: 20px;
     }
 }
+/* Contact Page css start from here //
+
+/* --- CONTACT PAGE REFINED --- */
+.contact-page-wrapper {
+    background: #fff;
+    overflow-x: hidden;
+}
+
+.container-contact {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.contact-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligns phone and form to the bottom of the section */
+    position: relative;
+    padding-top: 100px;
+}
+
+/* Left Side Content */
+.contact-visual {
+    flex: 1;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.phone-img {
+    max-width: 480px;
+    margin-bottom: -20px;
+}
+
+.bg-text {
+    font-size: 85px;
+    font-weight: 900;
+    color: #f0f0f0; /* Very light gray */
+    margin: 0;
+    line-height: 0.8;
+    letter-spacing: 2px;
+}
+
+.sub-heading-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.accent-line {
+    width: 45px;
+    height: 1px;
+    background: #aaa;
+}
+
+.sub-heading-row h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* The Overlapping Black Form */
+.contact-form-container {
+    flex: 0 0 440px;
+    position: relative;
+    z-index: 99; /* Keeps it above everything */
+}
+
+.black-card {
+    background: #000;
+    border-radius: 15px;
+    padding: 45px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    /* Moves the box down so it overlaps the gray section */
+    transform: translateY(120px); 
+}
+
+.form-intro {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.btn-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.type-selection {
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.type-selection:hover {
+    border-color: #fff;
+}
+
+.input-row {
+    margin-bottom: 25px;
+}
+
+.input-row label {
+    display: block;
+    color: #777;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.input-row input, .input-row textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #fff;
+    padding: 10px 0;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.file-upload {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-submit-contact {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Gray Info Strip */
+.contact-details-bar {
+    background: #d1d1d1;
+    padding: 140px 0 60px 0; /* Huge top padding to accommodate the overlapping form */
+}
+
+.details-flex {
+    display: flex;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.detail-block h6 {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.detail-block p {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.social-icons-row {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons-row a {
+    color: #000;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .contact-flex-container { flex-direction: column; align-items: center; text-align: center; }
+    .black-card { transform: translateY(50px); width: 100%; margin: 0 auto; }
+    .details-flex { flex-direction: column; text-align: center; gap: 40px; padding-top: 80px; }
+    .social-icons-row { margin: 0 auto; }
+}
+
+/* Portfolio Page css Code start form here //
+
+/* --- FIXED PORTFOLIO STYLES --- */
+.portfolio-page-wrapper { background: #fff; color: #000; overflow: hidden; }
+
+.container-custom { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Fixed Title: Added top padding to prevent header overlap */
+.portfolio-hero { padding: 150px 0 80px; text-align: center; }
+
+.frisk-main-title {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 60px;
+    text-transform: capitalize;
+}
+
+/* Fixed Hero Project Grid */
+.hero-project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.frisk-project-card {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: #f4f4f4;
+}
+
+.frisk-project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    text-align: left;
+    color: #fff;
+}
+
+.card-overlay .cat { font-size: 12px; color: #fff; margin-bottom: 10px; display: block; font-weight: 600; }
+.card-overlay h3 { font-size: 32px; font-weight: 800; margin: 0; }
+
+/* Award List */
+.history-list-section { padding: 80px 0; }
+.history-row { display: flex; justify-content: space-between; padding: 30px 0; border-bottom: 1px solid #000; }
+.history-row.header-row { border-top: 1px solid #000; font-weight: 800; font-size: 13px; }
+
+/* Fixed Articles Grid */
+.articles-section { padding: 100px 0; border-top: 1px solid #eee; }
+.frisk-section-title { font-size: 52px; font-weight: 900; margin-bottom: 60px; text-align: center; line-height: 1; }
+.articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.article-img { height: 280px; margin-bottom: 20px; overflow: hidden; }
+.article-img img { width: 100%; height: 100%; object-fit: cover; }
+.article-card h4 { font-size: 22px; font-weight: 800; line-height: 1.3; }
+.read-more { font-size: 13px; font-weight: 800; text-decoration: none; color: #000; border-bottom: 2px solid #000; }
+
+/* Fixed Logo Grid: Proper borders and centering */
+.logo-grid-section { padding: 80px 0; }
+.frisk-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.logo-item {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 30px;
+}
+
+.logo-item img {
+    max-width: 120px;
+    filter: brightness(0); /* Makes black logos for visibility on white */
+    opacity: 0.7;
+}
+
+/* CTA */
+.portfolio-cta-section { background: #D4FF00; padding: 120px 0; text-align: center; }
+.portfolio-cta-section h2 { font-size: 72px; font-weight: 900; line-height: 1; margin-bottom: 20px; }
+.black-btn { background: #000; color: #fff; padding: 18px 45px; font-weight: 900; text-decoration: none; display: inline-block; }
+
+/* Responsive */
+@media (max-width: 991px) {
+    .frisk-main-title { font-size: 48px; }
+    .hero-project-grid, .articles-grid, .frisk-logo-grid { grid-template-columns: 1fr; }
+}
+
+/* page-cookie-policy css start here //
+
+/* --- COOKIE POLICY STYLES --- */
+.legal-page-wrapper {
+    background: #fff;
+    color: #000;
+    padding-bottom: 100px;
+}
+
+/* Container for legal text should be narrower for readability */
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Style */
+.legal-hero {
+    padding: 150px 0 80px;
+    border-bottom: 1px solid #000;
+}
+
+.legal-title {
+    font-size: 85px;
+    font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.last-updated {
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* Content Blocks */
+.legal-content {
+    padding-top: 60px;
+}
+
+.legal-block {
+    display: flex;
+    gap: 40px;
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.legal-block:last-child {
+    border-bottom: none;
+}
+
+.block-number {
+    font-size: 16px;
+    font-weight: 900;
+    color: #D4FF00; /* Lime Green Accent */
+    background: #000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.block-text h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.block-text p, .block-text li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.block-text ul {
+    padding-left: 20px;
+}
+
+.block-text li {
+    margin-bottom: 15px;
+}
+
+.block-text a {
+    color: #000;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.block-text a:hover {
+    color: #D4FF00;
+    background: #000;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal-title { font-size: 50px; }
+    .legal-block { flex-direction: column; gap: 20px; padding: 40px 0; }
+}
+
+/* page-terms-of-service css start from here //
+/* Specific tweaks for Terms page if needed */
+.legal-page-wrapper .legal-hero {
+    background: #fafafa; /* Very light gray background for the hero area */
+}
+
+/* Ensure consistent spacing for lists in legal blocks */
+.legal-block .block-text ul {
+    margin-top: 20px;
+    list-style-type: square;
+}
+
+.legal-block .block-text ul li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    color: #555;
+}
